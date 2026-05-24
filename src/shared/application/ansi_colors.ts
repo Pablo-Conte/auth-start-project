@@ -1,0 +1,9 @@
+export const lightGreen = '\x1b[92m%s\x1b[0m';
+export const lightRed = '\x1b[91m%s\x1b[0m';
+export const lightBlue = '\x1b[96m%s\x1b[0m';
+export const lightPurple = '\x1b[94m%s\x1b[0m';
+export const lightYellow = '\x1b[93m%s\x1b[0m';
+export const lightMagenta = '\x1b[95m%s\x1b[0m';
+export const lightBlack = '\x1b[90m%s\x1b[0m';
+export const white = '\x1b[97m%s\x1b[0m';
+export const gray = '\x1b[37m%s\x1b[0m';

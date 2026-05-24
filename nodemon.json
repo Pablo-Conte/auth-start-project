@@ -1,0 +1,23 @@
+{
+    "watch": [
+        "./src",
+        "./nodemon.json",
+        "./tsconfig.json",
+        "./eslintrc.json",
+        "./esbuild.config.js"
+    ],
+    "ignore": [
+        "dist",
+        "node_modules",
+        "./src/**/*.test.ts",
+        "./src/**/*.prisma",
+        "./src/**/*.swagger.json"
+    ],
+    "ext": "ts,js,json,cjs,mjs",
+    "exec": "rimraf dist && node --no-warnings ./esbuild.config.js && node --no-warnings --env-file=.env dist/shared/main/index.js",
+    "legacyWatch": true,
+    "verbose": false,
+    "events": {
+        "crash": "echo \n"
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "editor.fontLigatures": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.tabSize": 4,
+    "workbench.tree.indent": 16,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[html]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#4c4f4cbb"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#ef5350",
+    "material-icon-theme.files.associations": {
+        "ormconfig.json": "database",
+        "tsconfig.json": "tune",
+        "package.json": "Nodejs",
+        "swagger.json": "lib",
+        "*.swagger.json": "lib",
+        "*.rules.ts": "Settings",
+        "*.types.ts": "Typescript-def",
+        "*.entity.ts": "Typescript-def",
+        "*.bak": "Changelog",
+        "*.dbml": "3d",
+        // **.json -> sobescreve qualquer especificação
+        // *.json -> sobescreve todos os arquivos .json sem especificação
+    },
+    "material-icon-theme.folders.associations": {
+        "infra": "app",
+        "entities": "class",
+        "schemas": "class",
+        "repositories": "mappings",
+        "http": "container",
+        "migrations": "tools",
+        "modules": "components",
+        "implementations": "core",
+        "dtos": "typescript",
+        "default": "core",
+        "main": "core",
+        "*": "core",
+        "domain": "class",
+        "in-memory": "mock",
+        "insomnia": "shared",
+        "swagger": "meta",
+        "seeds": "Ci",
+        "useCases": "controller",
+        "validate-inbound": "controller",
+        "digest-rules": "controller",
+        "erd": "Context",
+        "application": "context",
+    },
+}

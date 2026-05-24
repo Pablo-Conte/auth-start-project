@@ -1,0 +1,46 @@
+ARG NODE_VERSION=22.22.1
+
+FROM node:${NODE_VERSION}-alpine AS base
+WORKDIR /usr/app
+
+################################################################################
+
+FROM base AS deps
+
+COPY package.json package-lock.json ./
+
+RUN --mount=type=cache,target=/root/.npm \
+    npm pkg delete scripts.prepare && \
+    npm pkg delete scripts.postinstall && \
+    npm ci --omit=dev
+
+################################################################################
+
+FROM base AS build
+
+COPY package.json package-lock.json ./
+
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
+
+COPY . .
+
+RUN npm run esbuild
+
+################################################################################
+
+FROM base AS final
+
+USER node
+
+COPY --from=deps /usr/app/node_modules ./node_modules
+COPY --from=build /usr/app/node_modules/.prisma ./node_modules/.prisma
+COPY --from=build /usr/app/dist ./dist
+COPY package.json .
+
+ENV NODE_ENV=develop
+ENV TZ="America/Sao_Paulo"
+
+EXPOSE 3000
+
+CMD ["node", "dist/shared/main/index.js"]
